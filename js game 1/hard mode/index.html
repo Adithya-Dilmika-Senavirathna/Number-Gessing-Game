@@ -7,6 +7,13 @@
     <title>JS-Game01</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <style>
+      body {
+        background-image: url("https://media.istockphoto.com/photos/colorful-numbers-background-picture-id884140874");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
   </head>
   <body>
 
@@ -35,12 +42,11 @@
     <br>
     <br>
     <br>
-    <a href="../Level Select.html" style=" color: white;""> go back to the level select screen ===></a>
+    <a href="../Level Select.html" style=" color: white;"class="back"> go back to the level select screen ===></a>
     <!--  -->
     <script>
             //
-      let l25l = 75;
-//
+      let l25l = 25;
       let magicNumber = Math.trunc(Math.random() * l25l);
       console.log(`Magic Number ${magicNumber}`);
       let life = 5;
@@ -93,7 +99,7 @@
             ).innerHTML = `Life <span>${life}</span>`;
             //            document.querySelector("body").style.backgroundColor = "red
             alert(
-              `Hey you stupid idot your life is ${life} I'll give you a hint the number should be between ${l25l} and 0.`
+              `Hey your life is ${life} I'll give you a hint the number should be between ${l25l} and 0.`
             );
             //
             playsound("../audio/audio/dead.wav");
@@ -158,4 +164,3 @@
     </script>
   </body>
 </html>
-

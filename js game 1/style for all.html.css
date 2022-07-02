@@ -57,6 +57,7 @@ iframe {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  background-image: linear-gradient(to right, #f00, #0f0, #00f, #ff0);
 }
 
 .border {
