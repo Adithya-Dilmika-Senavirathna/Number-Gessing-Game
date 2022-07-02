@@ -1,0 +1,40 @@
+.d-f{
+    display: flex;
+}
+
+.j-c{
+    justify-content: center;
+}
+
+.al-c{
+    align-items: center;
+}
+
+.c-fff{
+    color: #FFF;
+}
+
+.c-000{
+    color: #000;
+}
+
+.bg-222{
+    background-color: #222222;
+}
+.bg-333{
+    background-color: #333333;
+}
+.bg-#ccc{
+    background-color: #cccccc;
+}
+.bg-#t{
+    background-color: transparent;
+}
+
+.f-a{
+    font-family: arial;
+}
+
+.f-r{
+    font-family: 'Roboto';
+}

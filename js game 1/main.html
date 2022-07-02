@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>home page</title>
+
+    <link rel="stylesheet" href="./style for all.html.css" />
+  </head>
+  <body>
+    <div class="cccooonnn">
+      <div class="game">
+        <div class="border">
+          <div class="topcon">
+            <div class="top">
+              <div class="icon">🔢</div>
+              <div class="name">Game</div>
+              <div class="btns">
+                <button
+                  class="x"
+                  onclick="                   x()"
+                  style="cursor: pointer"
+                >
+                  X
+                </button>
+                <button class="min" onclick="min()" style="cursor: pointer">
+                  -
+                </button>
+                <button class="max" onclick="max()" style="cursor: pointer">
+                  ▣
+                </button>
+                <button
+                  class="maxmax"
+                  onclick="maxmax()"
+                  style="cursor: pointer"
+                >
+                  ▧
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="con">
+            <iframe src="./Level Select.html" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con-for-top">
+      <div class="center-for-con">
+
+        <div class="center">
+          <div class="bottem">
+            <div class="windows wg" onclick="shutdown()">
+              <a href="./index.html"><img src="./img/Alecive-Flatwoken-Apps-Dialog-Shutdown.ico"></a>
+            </div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="s"></div>
+            <div class="game2 wg" onclick="lg()"><img src="./img/Dtafalonso-Android-Lollipop-Play-Games.ico"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <script>
+      function maxmax() {
+        document.querySelector(".game").style.height = "100vh";
+        document.querySelector(".game").style.width = "100vw";
+        document.querySelector(".border").style.height = "100vh";
+        document.querySelector(".border").style.width = "100vw";
+        document.querySelector(".con-for-top").style.display = "none";
+      }
+
+      function max() {
+        document.querySelector(".game").style.height = "100%";
+        document.querySelector(".game").style.width = "100%";
+        document.querySelector(".border").style.height = "825.600px";
+        document.querySelector(".border").style.width = "100%";
+        document.querySelector(".con-for-top").style.display = "block";
+      }
+
+      function lg() {
+        document.querySelector(".game").style.display = "block";
+      }
+
+      function min() {
+        alert(
+          "Please sorry for your disterbence beacuse I don't know how to how to handle local storage and section storage."
+        );
+
+        console.log(
+          "Please sorry for your disterbence beacuse I don't know how to how to handle local storage and section storage."
+        );
+      }
+
+      function x() {
+        document.querySelector(".game").style.display = "none";
+        document.querySelector(".con-for-top").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

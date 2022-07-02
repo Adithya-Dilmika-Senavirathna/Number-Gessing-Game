@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Game01</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div id="myDIV"></div>
+    <div class="dl-con">
+<button id="light-mode" onclick="myFunction()">Light mode</button>
+<button id="Dark-mode" onclick="toggleDarkmode()">Dark mode</button>
+</div>
+    <div class="all">
+      <h1>?</h1>
+      <input type="text" />
+      <button id="btn01">Check</button>
+      <h2>Result</h2>
+      <h5 id="hs">0</h5>
+      <h3>Life <span>5</span></h3>
+      <button id="btn02">Reset</button>
+      <h6>Score: <span id="id">0</span></h6>
+      <img
+        src="../img/asdfhyujujhytrsfadsfghyjliuytrefsdfeuiy7trewdasfeuioljkhgfdse56789op;lkm.jhgty567o89piokjthyr6illhgyuioljkluijklutgphuerhdkjlkfdjijhksdgdahdujfhygxhjukiyudl.png"
+        alt=""
+      />
+    </div>
+    <!--  -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="../Level Select.html" style=" color: white;""> go back to the level select screen ===></a>
+    <!--  -->
+    <script>
+      let l25l = 50;
+      let magicNumber = Math.trunc(Math.random() * l25l);
+      console.log(`Magic Number ${magicNumber}`);
+      let life = 10;
+      let highscore = 0;
+      let score = 0;
+
+      function playsound(soundclip) {
+        let audio = new Audio(soundclip);
+
+        audio.play();
+      }
+
+      document.getElementById("btn01").addEventListener("click", function () {
+        let userAnswer = +document.querySelector("input").value;
+
+        // When player wins
+        if (userAnswer === magicNumber) {
+          if (score < 75) {
+            document.querySelector("h2").innerHTML = "😊You got it right😊";
+            document.querySelector("body").style.backgroundColor = "#52ff52";
+            document.querySelector("h1").textContent = magicNumber;
+            score = score + 5;
+            document.getElementById("id").textContent = score;
+            playsound("../audio/audio/correct.mp3");
+            documet;
+          } else {
+            document.querySelector("h2").innerHTML = "😊Congratulations😊";
+            document.querySelector("body").style.backgroundColor = "#52ff52";
+            document.querySelector("img").style.display = "block";
+            playsound("../audio/audio/Correct-sound-effect.mp3");
+          }
+
+          if (life > highscore) {
+            highscore = life;
+            document.querySelector("#hs").innerHTML = highscore;
+          }
+
+          // When guess is too high
+        } else if (userAnswer !== magicNumber) {
+          if (life > 1) {
+            document.querySelector("h2").innerHTML =
+              userAnswer > magicNumber
+                ? "😜That's too high😜"
+                : "🤢That's too low🤢";
+            document.querySelector("body").style.backgroundColor = "#ff5252";
+            document.querySelector("h1").textContent = magicNumber;
+            life--;
+            document.querySelector(
+              "h3"
+            ).innerHTML = `Life <span>${life}</span>`;
+            //            document.querySelector("body").style.backgroundColor = "red
+            alert(
+              `Hey you stupid idot your life is ${life} I'll give you a hint the number should be between ${l25l} and 0.`
+            );
+            //
+            playsound("../audio/audio/dead.wav");
+          } else {
+            document.querySelector("h2").innerHTML = "😢You got it wrong😢";
+            document.querySelector("body").style.backgroundColor = "#ff5252";
+            document.querySelector("h1").textContent = magicNumber;
+            document.querySelector("h3").innerHTML = "Game Over";
+            document.querySelector("#btn01").disabled = true;
+            document.querySelector("input").disabled = true;
+            document.querySelector("img").style.display = "block";
+            document.querySelector("img").src = "../img/over.jpg";
+
+            playsound("../audio/audio/Over.wav");
+          }
+        }
+        //{
+        //        else if (userAnswer > magicNumber) {
+        //          if (life > 1) {
+        //            document.querySelector("h2").innerHTML = "😜That's too high😜";
+        //            document.querySelector("body").style.backgroundColor = "#d1d100";
+        //            life--;
+        //            document.querySelector("span").innerHTML = life;
+        //          } else {
+        //            document.querySelector("h2").innerHTML = "🤷‍♀️GAME OVER🤷‍♀️";
+
+        //            document.querySelector("body").style.backgroundColor = "red";
+        //            document.querySelector("span").textContent = "0";
+        //          }
+        //
+        //          // When guess is too low
+        //        } else if (userAnswer < magicNumber) {
+        //          if (life > 1) {
+        //            document.querySelector("h2").innerHTML = "🤢That's too low🤢";
+        //            document.querySelector("body").style.backgroundColor = "#ffbdde";
+        //            life--;
+        //            document.querySelector("span").innerHTML = life;
+        //          } else {
+        //            document.querySelector("h2").innerHTML = "🤷‍♀️GAME OVER🤷‍♀️";
+        //            document.querySelector("body").style.backgroundColor = "red";
+        //            document.querySelector("span").textContent = "0";
+        //          }}
+        //        }
+      });
+
+      document.getElementById("btn02").addEventListener("click", function () {
+        magicNumber = Math.trunc(Math.random() * 75);
+        console.log(`Magic Number ${magicNumber}`);
+
+        document.querySelector("input").value = "";
+        document.querySelector("h2").innerHTML = "Result";
+        document.querySelector("body").style.backgroundColor = "";
+
+        life = 10;
+        document.querySelector("span").innerHTML = life;
+        document.querySelector("h1").innerHTML = "?";
+        document.querySelector("img").style.display = "none";
+
+        document.querySelector("#btn01").disabled = false;
+        document.querySelector("input").disabled = false;
+      });
+    </script>
+  </body>
+</html>
+
